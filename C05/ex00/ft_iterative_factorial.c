@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayag <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 12:16:23 by asayag            #+#    #+#             */
-/*   Updated: 2025/02/18 14:21:19 by asayag           ###   ########.fr       */
+/*   Created: 2025/02/13 12:35:01 by asayag            #+#    #+#             */
+/*   Updated: 2025/02/13 13:59:10 by asayag           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <stdlib.h>
+/*#include <stdio.h>
+#include <stdlib.h>*/
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_iterative_factorial(int nb)
 {
+	int	r;
 	int	i;
 
-	i = 0;
-	while (src[i])
+	i = 1;
+	r = 1;
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
+		return (0);
+	while (nb - i >= 0)
 	{
-		dest[i] = src [i];
+		r = r * i;
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (r);
 }
 
-/*int	main(void)
+/*int	main(int ac, char **av)
 {
-	char dest[100];
-	printf("%s", ft_strcpy(dest, "456789"));
-	return (0);
+	ac = 0;
+	printf("%d",ft_iterative_factorial(atoi(av[1])));
 }*/

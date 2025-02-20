@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check.c                                         :+:      :+:    :+:   */
+/*   result.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilaamari <ilaamari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asayag <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/09 01:03:33 by asayag            #+#    #+#             */
-/*   Updated: 2025/02/09 05:56:52 by ilaamari         ###   ########.fr       */
+/*   Created: 2025/02/08 19:42:13 by asayag            #+#    #+#             */
+/*   Updated: 2025/02/08 19:46:23 by asayag           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+void	ft_putnbr(int c);
+void	ft_putchar(char c);
 
-int	check_same(int pos, int result[4][4], int size)
+void	result1(int result[6][6])
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (i < pos % 4)
+	j = 0;
+	while (j < 6)
 	{
-		if (result[pos / 4][i] == size)
-			return (1);
-		i++;
+		while (i < 6)
+		{
+			ft_putnbr(result[j][i]);
+			ft_putchar(' ');
+			i++;
+		}
+		ft_putchar('\n');
+		i = 0;
+		j++;
 	}
-	i = 0;
-	while (i < pos / 4)
-	{
-		if (result[i][pos % 4] == size)
-			return (1);
-		i++;
-	}
-	return (0);
 }

@@ -1,34 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayag <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 12:16:23 by asayag            #+#    #+#             */
-/*   Updated: 2025/02/18 14:21:19 by asayag           ###   ########.fr       */
+/*   Created: 2025/02/18 11:32:06 by asayag            #+#    #+#             */
+/*   Updated: 2025/02/18 11:33:47 by asayag           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_is_prime(int nb)
 {
-	int	i;
+	int	guess;
+	int	n;
 
-	i = 0;
-	while (src[i])
+	n = 1;
+	guess = 0;
+	while (n <= nb)
 	{
-		dest[i] = src [i];
-		i++;
+		if (nb % n == 0)
+			guess++;
+		n++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	if (guess == 2)
+		return (1);
+	else
+		return (0);
 }
 
-/*int	main(void)
+int	ft_find_next_prime(int nb)
 {
-	char dest[100];
-	printf("%s", ft_strcpy(dest, "456789"));
-	return (0);
+	while (ft_is_prime(nb) == 0)
+		nb++;
+	return (nb);
+}
+
+/*int	main(int ac, char **av)
+{
+	ac = 0;
+	printf("%i", ft_find_next_prime(atoi(av[1])));
 }*/

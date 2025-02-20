@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayag <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 12:16:23 by asayag            #+#    #+#             */
-/*   Updated: 2025/02/18 14:21:19 by asayag           ###   ########.fr       */
+/*   Created: 2025/02/13 12:26:22 by asayag            #+#    #+#             */
+/*   Updated: 2025/02/18 12:23:54 by asayag           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 
-char	*ft_strcpy(char *dest, char *src)
+void	ft_putnbr(int nbr)
 {
-	int	i;
-
-	i = 0;
-	while (src[i])
+	if (nbr == -2147483648)
+		write(1, "-2147483648", 11);
+	else if (nbr < 0)
 	{
-		dest[i] = src [i];
-		i++;
+		write(1, "-", 1);
+		ft_putnbr(nbr * -1);
 	}
-	dest[i] = '\0';
-	return (dest);
+	else if (nbr >= 0)
+	{
+		if (nbr > 9)
+			ft_putnbr(nbr / 10);
+		nbr = nbr % 10 + '0';
+		write(1, &nbr, 1);
+	}
 }
-
-/*int	main(void)
+/*
+int	main(int ac, char **av)
 {
-	char dest[100];
-	printf("%s", ft_strcpy(dest, "456789"));
-	return (0);
+	ac = 0;
+	ft_putnbr(atoi(av[1]));
 }*/

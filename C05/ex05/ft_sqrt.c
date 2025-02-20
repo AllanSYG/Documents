@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check.c                                         :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilaamari <ilaamari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asayag <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/09 01:03:33 by asayag            #+#    #+#             */
-/*   Updated: 2025/02/09 05:56:52 by ilaamari         ###   ########.fr       */
+/*   Created: 2025/02/18 11:13:57 by asayag            #+#    #+#             */
+/*   Updated: 2025/02/18 11:19:26 by asayag           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
+#include <stdlib.h>
 
-int	check_same(int pos, int result[4][4], int size)
+int	ft_sqrt(int nb)
 {
-	int	i;
+	int	guess;
 
-	i = 0;
-	while (i < pos % 4)
+	guess = 0;
+	while (guess <= nb)
 	{
-		if (result[pos / 4][i] == size)
-			return (1);
-		i++;
-	}
-	i = 0;
-	while (i < pos / 4)
-	{
-		if (result[i][pos % 4] == size)
-			return (1);
-		i++;
+		if (nb == guess * guess)
+			return (guess);
+		guess++;
 	}
 	return (0);
 }
+
+/*int	main(int ac, char **av)
+{
+	ac = 0;
+	printf("%i", ft_sqrt(atoi(av[1])));
+}*/

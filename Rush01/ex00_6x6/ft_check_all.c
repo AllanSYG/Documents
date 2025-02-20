@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_check_col_up(int input[16], int pos, int result[4][4])
+int	ft_check_col_up(int input[24], int pos, int result[6][6])
 {
 	int	i;
 	int	max;
@@ -19,24 +19,24 @@ int	ft_check_col_up(int input[16], int pos, int result[4][4])
 	i = 0;
 	count = 0;
 	max = 0;
-	if (pos / 4 == 3)
+	if (pos / 6 == 5)
 	{
-		while (i < 4)
+		while (i < 6)
 		{
-			if (result[i][pos % 4] > max)
+			if (result[i][pos % 6] > max)
 			{
-				max = result[i][pos % 4];
+				max = result[i][pos % 6];
 				count++;
 			}
 			i++;
 		}
-		if (input[pos % 4] != count)
+		if (input[pos % 6] != count)
 			return (1);
 	}
 	return (0);
 }
 
-int	ft_check_line_left(int input[16], int pos, int result[4][4])
+int	ft_check_line_left(int input[24], int pos, int result[6][6])
 {
 	int	i;
 	int	max;
@@ -45,76 +45,76 @@ int	ft_check_line_left(int input[16], int pos, int result[4][4])
 	i = 0;
 	count = 0;
 	max = 0;
-	if (pos % 4 == 5)
+	if (pos % 6 == 5)
 	{
-		while (i < 4)
+		while (i < 6)
 		{
-			if (result[pos / 4][i] > max)
+			if (result[pos / 6][i] > max)
 			{
-				max = result[pos / 4][i];
+				max = result[pos / 6][i];
 				count++;
 			}
 			i++;
 		}
-		if (input[pos / 4 + 8] != count)
+		if (input[pos / 6 + 12] != count)
 			return (1);
 	}
 	return (0);
 }
 
-int	ft_check_line_right(int input[16], int pos, int result[4][4])
+int	ft_check_line_right(int input[24], int pos, int result[6][6])
 {
 	int	i;
 	int	max;
 	int	count;
 
-	i = 3;
+	i = 5;
 	count = 0;
 	max = 0;
-	if (pos % 4 == 3)
+	if (pos % 6 == 5)
 	{
 		while (i >= 0)
 		{
-			if (result[pos / 4][i] > max)
+			if (result[pos / 6][i] > max)
 			{
-				max = result[pos / 4][i];
+				max = result[pos / 6][i];
 				count++;
 			}
 			i--;
 		}
-		if (input[pos / 4 + 12] != count)
+		if (input[pos / 6 + 18] != count)
 			return (1);
 	}
 	return (0);
 }
 
-int	ft_check_col_down(int input[16], int pos, int result[4][4])
+int	ft_check_col_down(int input[24], int pos, int result[6][6])
 {
 	int	i;
 	int	max;
 	int	count;
 
-	i = 3;
+	i = 5;
 	count = 0;
 	max = 0;
-	if (pos / 4 == 3)
+	if (pos / 6 == 5)
 	{
 		while (i >= 0)
 		{
-			if (result[i][pos % 4] > max)
+			if (result[i][pos % 6] > max)
 			{
-				max = result[i][pos % 4];
+				max = result[i][pos % 6];
 				count++;
 			}
 			i--;
 		}
-		if (input[pos % 4 + 4] != count)
+		if (input[pos % 6 + 6] != count)
 			return (1);
 	}
 	return (0);
 }
 
-int	ft_check_all(int input[16], int pos, int result[4][4])
+int	ft_check_all(int input[24], int pos, int result[6][6])
 {
 	if (ft_check_line_left(input, pos, result) == 1)
 		return (1);

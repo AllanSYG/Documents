@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayag <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 12:16:23 by asayag            #+#    #+#             */
-/*   Updated: 2025/02/18 14:21:19 by asayag           ###   ########.fr       */
+/*   Created: 2025/02/17 12:26:19 by asayag            #+#    #+#             */
+/*   Updated: 2025/02/17 12:45:10 by asayag           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_fibonacci(int index)
 {
-	int	i;
-
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src [i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	if (index == 0)
+		return (0);
+	if (index == 1)
+		return (1);
+	if (index < 0)
+		return (-1);
+	else
+		return (ft_fibonacci (index - 1) + ft_fibonacci (index - 2));
 }
-
-/*int	main(void)
+/*
+int	main(int ac, char **av)
 {
-	char dest[100];
-	printf("%s", ft_strcpy(dest, "456789"));
-	return (0);
+	ac = 0;
+	printf("%i", ft_fibonacci(atoi(av[1])));
 }*/

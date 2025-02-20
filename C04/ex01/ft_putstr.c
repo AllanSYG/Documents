@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check.c                                         :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilaamari <ilaamari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asayag <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/09 01:03:33 by asayag            #+#    #+#             */
-/*   Updated: 2025/02/09 05:56:52 by ilaamari         ###   ########.fr       */
+/*   Created: 2025/02/13 12:22:00 by asayag            #+#    #+#             */
+/*   Updated: 2025/02/13 12:24:25 by asayag           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-int	check_same(int pos, int result[4][4], int size)
+void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (i < pos % 4)
+	while (str[i])
 	{
-		if (result[pos / 4][i] == size)
-			return (1);
+		write(1, &str[i], 1);
 		i++;
 	}
-	i = 0;
-	while (i < pos / 4)
-	{
-		if (result[i][pos % 4] == size)
-			return (1);
-		i++;
-	}
-	return (0);
 }
+
+/*int	main(int ac, char **av)
+{
+	ac = 0;
+	char *str = av[1];
+	ft_putstr(str);
+}*/

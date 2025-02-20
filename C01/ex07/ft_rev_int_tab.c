@@ -9,7 +9,7 @@
 /*   Updated: 2025/02/12 14:36:36 by asayag           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+/*#include <stdio.h>*/
 
 void	ft_rev_int_tab(int *tab, int size)
 {
@@ -30,7 +30,7 @@ void	ft_rev_int_tab(int *tab, int size)
 	}
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int	tab[6] = {1, 2, 3, 4, 5, 6};
 	int	size;
@@ -43,4 +43,4 @@ int	main(void)
 	printf("%d", tab[3]);
 	printf("%d", tab[4]);
 	printf("%d", tab[5]);
-}
+}*/

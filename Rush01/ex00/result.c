@@ -9,9 +9,10 @@
 /*   Updated: 2025/02/08 19:46:23 by asayag           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+void	ft_putnbr(int c);
 void	ft_putchar(char c);
 
-void	result1(char **result)
+void	result1(int result[4][4])
 {
 	int	i;
 	int	j;
@@ -22,10 +23,12 @@ void	result1(char **result)
 	{
 		while (i < 4)
 		{
-			ft_putchar(result[j][i]);
+			ft_putnbr(result[j][i]);
+			ft_putchar(' ');
 			i++;
 		}
 		ft_putchar('\n');
+		i = 0;
 		j++;
 	}
 }

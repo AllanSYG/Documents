@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayag <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 12:16:23 by asayag            #+#    #+#             */
-/*   Updated: 2025/02/18 14:21:19 by asayag           ###   ########.fr       */
+/*   Created: 2025/02/13 11:08:53 by asayag            #+#    #+#             */
+/*   Updated: 2025/02/13 11:14:04 by asayag           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
-#include <stdlib.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (src[i])
+	if (n <= 0)
+		return(0);
+	n = n - 1;
+	while (s1[i] && s2[i] && (s1[i] == s2[i]))
 	{
-		dest[i] = src [i];
+		if (i ==n)
+			return (s1[i] - s2[i]);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (s1[i] - s2[i]);
 }
 
 /*int	main(void)
 {
-	char dest[100];
-	printf("%s", ft_strcpy(dest, "456789"));
+	char *s1 = "abcd";
+	char *s2 = "wxfc";
+	unsigned int n = 3;
+	printf("%i", ft_strncmp(s1,s2, n));
 	return (0);
 }*/

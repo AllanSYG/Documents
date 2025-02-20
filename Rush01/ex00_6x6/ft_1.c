@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check.c                                         :+:      :+:    :+:   */
+/*   ft_1.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilaamari <ilaamari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/09 01:03:33 by asayag            #+#    #+#             */
-/*   Updated: 2025/02/09 05:56:52 by ilaamari         ###   ########.fr       */
+/*   Created: 2025/02/08 17:04:22 by asayag            #+#    #+#             */
+/*   Updated: 2025/02/09 05:56:54 by ilaamari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 
-int	check_same(int pos, int result[4][4], int size)
+void	ft_putnbr(int c);
+
+void	ft_table0(int	*input);
+
+int	*ft_1(char *argv)
 {
 	int	i;
+	int	n;
+	int	*input;
 
+	n = 0;
 	i = 0;
-	while (i < pos % 4)
+	input = malloc(36 * sizeof(int));
+	while (i < 47)
 	{
-		if (result[pos / 4][i] == size)
-			return (1);
-		i++;
+		input[n] = atoi(&argv[i]);
+		i = i + 2;
+		n++;
 	}
-	i = 0;
-	while (i < pos / 4)
-	{
-		if (result[i][pos % 4] == size)
-			return (1);
-		i++;
-	}
-	return (0);
+	return (input);
 }

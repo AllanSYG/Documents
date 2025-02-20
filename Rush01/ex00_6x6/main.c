@@ -17,9 +17,9 @@ void	check1(int i, int check, int argc, char **argv)
 {
 	if (argc == 2)
 	{
-		if (argv[1][31] == 0)
+		if (argv[1][47] == 0)
 		{
-			while (i <= 31)
+			while (i <= 47)
 			{
 				if (argv[1][i] >= '1' && argv[1][i] <= '6')
 				{
@@ -30,7 +30,7 @@ void	check1(int i, int check, int argc, char **argv)
 					write(1, "Error\n", 6);
 				i = i + 2;
 			}
-			if (check == 16)
+			if (check == 24)
 				ft_0(argv);
 		}
 		else

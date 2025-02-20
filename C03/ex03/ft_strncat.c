@@ -1,34 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayag <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 12:16:23 by asayag            #+#    #+#             */
-/*   Updated: 2025/02/18 14:21:19 by asayag           ###   ########.fr       */
+/*   Created: 2025/02/13 11:24:05 by asayag            #+#    #+#             */
+/*   Updated: 2025/02/13 11:27:41 by asayag           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	while (src[i])
+	j = 0;
+	while (dest[i])
 	{
-		dest[i] = src [i];
 		i++;
+	}
+	while (src[j] && j < nb)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
 	dest[i] = '\0';
 	return (dest);
 }
 
-/*int	main(void)
+/*int	main(int argc, char **argv)
 {
-	char dest[100];
-	printf("%s", ft_strcpy(dest, "456789"));
-	return (0);
+	argc = 0;
+	char *dest = argv[1];
+	char *src = argv[2];
+	unsigned int nb = atoi(argv[3]);
+	ft_strncat(dest, src, nb);
+	printf("%s", dest);
 }*/

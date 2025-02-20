@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check_same(int pos, int result[4][4], int size)
+int	check_same(int pos, int result[6][6], int size)
 {
 	int	i;
 
 	i = 0;
-	while (i < pos % 4)
+	while (i < pos % 6)
 	{
-		if (result[pos / 4][i] == size)
+		if (result[pos / 6][i] == size)
 			return (1);
 		i++;
 	}
 	i = 0;
-	while (i < pos / 4)
+	while (i < pos / 6)
 	{
-		if (result[i][pos % 4] == size)
+		if (result[i][pos % 6] == size)
 			return (1);
 		i++;
 	}
