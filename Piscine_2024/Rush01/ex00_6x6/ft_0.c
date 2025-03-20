@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 int		*ft_1(char *argv);
 
-void	ft_table0(int input[24]);
+void	ft_table0(int input[36]);
 
 void	ft_0(char **argv)
 {

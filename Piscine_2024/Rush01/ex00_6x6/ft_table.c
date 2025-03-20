@@ -13,9 +13,9 @@
 
 void	result1(int result[6][6]);
 
-int		ft_recur(int input[24], int pos, int result[6][6]);
+int		ft_recur(int input[36], int pos, int result[6][6]);
 
-void	ft_table0(int input[24])
+void	ft_table0(int input[36])
 {
 	int		result[6][6];
 

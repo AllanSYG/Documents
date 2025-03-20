@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_check_col_up(int input[24], int pos, int result[6][6])
+int	ft_check_col_up(int input[36], int pos, int result[6][6])
 {
 	int	i;
 	int	max;
@@ -36,7 +36,7 @@ int	ft_check_col_up(int input[24], int pos, int result[6][6])
 	return (0);
 }
 
-int	ft_check_line_left(int input[24], int pos, int result[6][6])
+int	ft_check_line_left(int input[36], int pos, int result[6][6])
 {
 	int	i;
 	int	max;
@@ -62,7 +62,7 @@ int	ft_check_line_left(int input[24], int pos, int result[6][6])
 	return (0);
 }
 
-int	ft_check_line_right(int input[24], int pos, int result[6][6])
+int	ft_check_line_right(int input[36], int pos, int result[6][6])
 {
 	int	i;
 	int	max;
@@ -88,7 +88,7 @@ int	ft_check_line_right(int input[24], int pos, int result[6][6])
 	return (0);
 }
 
-int	ft_check_col_down(int input[24], int pos, int result[6][6])
+int	ft_check_col_down(int input[36], int pos, int result[6][6])
 {
 	int	i;
 	int	max;
@@ -114,7 +114,7 @@ int	ft_check_col_down(int input[24], int pos, int result[6][6])
 	return (0);
 }
 
-int	ft_check_all(int input[24], int pos, int result[6][6])
+int	ft_check_all(int input[36], int pos, int result[6][6])
 {
 	if (ft_check_line_left(input, pos, result) == 1)
 		return (1);

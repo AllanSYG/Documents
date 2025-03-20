@@ -9,11 +9,11 @@
 /*   Updated: 2025/02/09 05:52:19 by ilaamari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_check_all(int input[24], int pos, int result[6][6]);
+int	ft_check_all(int input[36], int pos, int result[6][6]);
 
 int	check_same(int pos, int result[6][6], char size);
 
-int	ft_recur(int input[24], int pos, int result[6][6])
+int	ft_recur(int input[36], int pos, int result[6][6])
 {
 	int	size;
 
